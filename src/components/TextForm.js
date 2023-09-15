@@ -4,28 +4,24 @@ export default function TextForm() {
     // create a state variable using react hook
     const [text, changetext] = useState("");
     let inputvalchange = (val) => {
-        console.log(val.target.value);
         changetext(val.target.value);
     }
     let toupperchasepress = event => {
-        console.log('button press');
         let newText = text.toUpperCase();
         changetext(newText);
         event.preventDefault();
     }
     let tolowerchasepress = event => {
-        console.log('button press');
         let newText = text.toLowerCase();
         changetext(newText);
         event.preventDefault();
     }
     let toreversethestring = event => {
-        console.log('button press');
         let newText2 = text.split("").reverse().join("");
         changetext(newText2);
         event.preventDefault();
     }
-    
+
     return (
         <div className="container mt-5">
             <div className="row">
@@ -38,7 +34,7 @@ export default function TextForm() {
                             <textarea type="text" value={text} onChange={inputvalchange} className="form-control" id="textareaField" rows="4" placeholder="Your text here" />
                         </div>
                         <br />
-                        <button  className="btn btn-primary btn1" onClick={toupperchasepress}>To UpperCase</button>
+                        <button className="btn btn-primary btn1" onClick={toupperchasepress}>To UpperCase</button>
                         <button className="btn btn-primary btn1" onClick={tolowerchasepress}>To LoxerCase</button>
                         <button className="btn btn-primary" onClick={toreversethestring}>To Reverse</button>
                     </form>
